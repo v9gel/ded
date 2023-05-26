@@ -5,14 +5,14 @@ export const Screen = styled.div`
   background-color: var(--cRed);
   flex-direction: column;
 
-  width: 390px;
+  width: 420px;
   height: 100%;
 
   // Десктоп версия
-  @media screen and (min-width: 390px) {
+  @media screen and (min-width: 420px) {
     border-radius: 60px;
     border: 4px solid var(--cBlack);
 
-    height: calc(100% - 120px);
+    height: 95%;
   }
 `;
