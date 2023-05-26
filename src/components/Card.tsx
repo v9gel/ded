@@ -62,7 +62,7 @@ export const Card = () => {
     startDrag(Point(event.clientX, event.clientY));
   };
 
-  const onMouseUp = (event: React.MouseEvent) => {
+  const onMouseUp = () => {
     endDrag();
   };
 
@@ -76,7 +76,7 @@ export const Card = () => {
     const touch = event.changedTouches[0];
     startDrag(Point(touch.clientX, touch.clientY));
   };
-  const onTouchEnd = (event: React.TouchEvent) => {
+  const onTouchEnd = () => {
     endDrag();
   };
   const onTouchMove = (event: React.TouchEvent) => {
