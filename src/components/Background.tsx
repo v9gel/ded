@@ -12,4 +12,6 @@ export const Background = styled.div`
   justify-content: center;
 
   background-color: #333;
+
+  position: fixed;
 `;
