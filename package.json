@@ -10,13 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",
@@ -35,5 +38,8 @@
     "semver": "^7.5.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
