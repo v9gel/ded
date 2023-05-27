@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import _rawEvents from './assets/events.csv';
+import { getRandomArrayElement } from './tools';
 
 interface RawEvent {
   id: string;
@@ -101,8 +102,7 @@ function getEvent(id?: string) {
     return events.find((event) => event.id === id);
   }
 
-  const randIndex = Math.floor(Math.random() * randomEvents.length);
-  return randomEvents[randIndex];
+  return getRandomArrayElement(randomEvents);
 }
 
 console.log(getEvent());
