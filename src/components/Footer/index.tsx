@@ -22,7 +22,7 @@ const FooterWrapper = styled.footer`
 export const Footer = () => {
   const time = useStore($time);
 
-  const [name, setName] = useState(getRandomName());
+  const [name] = useState(getRandomName());
 
   return (
     <FooterWrapper>

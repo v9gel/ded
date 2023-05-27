@@ -88,7 +88,23 @@ export const Card = ({ event }: Props) => {
 
   const drag = (point: Point) => {
     if (startPoint) {
-      setPoint(Point(point.x - startPoint.x, point.y - startPoint.y));
+      let pDiffX = point.x - startPoint.x;
+
+      if (pDiffX > 0) {
+        pDiffX = Math.min(pDiffX, 70);
+      } else {
+        pDiffX = Math.max(pDiffX, -70);
+      }
+
+      let pDiffY = point.y - startPoint.y;
+
+      if (pDiffY > 0) {
+        pDiffY = Math.min(pDiffY, 20);
+      } else {
+        pDiffY = Math.max(pDiffY, -30);
+      }
+
+      setPoint(Point(pDiffX, pDiffY));
     }
   };
 
