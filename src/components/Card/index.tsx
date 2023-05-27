@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
+import { resetDiffs, setDiffs } from '@/stores/diffs';
 import { Event, setEvent } from '@/stores/event';
 import { calcMarks } from '@/stores/marks';
 
@@ -82,6 +83,8 @@ export const Card = ({ event }: Props) => {
       }
     }
 
+    resetDiffs();
+
     setPoint(Point(0, 0));
     setStartPoint(undefined);
   };
@@ -92,8 +95,10 @@ export const Card = ({ event }: Props) => {
 
       if (pDiffX > 0) {
         pDiffX = Math.min(pDiffX, 70);
+        setDiffs(event.rightHealth, event.rightLaw, event.rightMoney, event.rightSociety);
       } else {
         pDiffX = Math.max(pDiffX, -70);
+        setDiffs(event.leftHealth, event.leftLaw, event.leftMoney, event.leftSociety);
       }
 
       let pDiffY = point.y - startPoint.y;

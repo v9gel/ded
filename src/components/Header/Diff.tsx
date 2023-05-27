@@ -28,6 +28,8 @@ const Circle = styled.div<Props>`
 
   border-radius: 50%;
   background-color: var(--cGreen);
+
+  transition: all 0.2s ease-out;
 `;
 
 interface Props {
