@@ -34,6 +34,7 @@ export const ProgressIcon = styled.div<PropsProgress>`
   color: var(--cBlack);
   overflow: hidden;
   z-index: 2;
+  transition: height 0.2s ease-out;
 `;
 
 export const Icon = ({ mark, count }: Props) => {
