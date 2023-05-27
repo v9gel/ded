@@ -115,7 +115,7 @@ export const Card = () => {
       onTouchMove={onTouchMove}
       style={style}
     >
-      <CardTextVariant deg={deg}>Да</CardTextVariant>
+      <CardTextVariant deg={deg}>Ну вот еще!</CardTextVariant>
       <Image src={image1}></Image>
     </CardWrapper>
   );

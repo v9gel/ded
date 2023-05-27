@@ -18,7 +18,7 @@ const CardTextVariantWrapper = styled.div<Props>`
 
   background-color: var(--cGreen);
   color: var(--cBlack);
-  transform: rotate(${(props) => props.deg}deg);
+  transform: rotate(${(props) => props.deg * -1}deg);
   transition: top 0.5s ease-out;
 `;
 
@@ -31,9 +31,8 @@ const CardTextText = styled.div<Props>`
   font-size: 20px;
   line-height: 30px;
 
-  text-align: ${(props) => (props.deg > 0 ? 'right' : 'left')};
+  text-align: ${(props) => (props.deg > 0 ? 'left' : 'right')};
   color: var(--cBlack);
-  transform: rotate(${(props) => props.deg * -2}deg);
 `;
 
 export const CardTextVariant: React.FC<Props> = ({ deg, children }) => {
