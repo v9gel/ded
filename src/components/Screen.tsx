@@ -13,6 +13,6 @@ export const Screen = styled.div`
     border-radius: 60px;
     border: 4px solid var(--cBlack);
 
-    height: 95%;
+    height: 700px;
   }
 `;

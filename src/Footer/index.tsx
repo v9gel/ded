@@ -7,8 +7,7 @@ import { Name } from './Name';
 const FooterWrapper = styled.footer`
   width: 100%;
 
-  height: 10%;
-  max-height: 126px;
+  max-height: 70px;
   padding: 30px;
 
   display: flex;
