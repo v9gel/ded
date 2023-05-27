@@ -17,12 +17,16 @@ export const GlobalStyle = createGlobalStyle`
     * {
       box-sizing: border-box;
       user-select: none;
+
+      font-family: 'Nunito', sans-serif;
     }
 
     :root {
       --cYellow: #fee772;
       --cRed: #c9462a;
       --cBlack: #242424;
+      --cGreen: #C4CB80;
+
 
       --cCardBg: #FFFAEC;
 

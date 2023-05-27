@@ -1,9 +1,14 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
-import image1 from '../assets/events/1.png';
+import image1 from '../../assets/events/1.png';
+import { CardTextVariant } from './CardTextVariant';
+
+const MAX_DEG = 10;
 
 const CardWrapper = styled.div`
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,6 +23,7 @@ const CardWrapper = styled.div`
   border-radius: 60px;
 
   transition: all 0.2s ease-out 0s;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -85,9 +91,15 @@ export const Card = () => {
     drag(Point(touch.clientX, touch.clientY));
   };
 
-  const style = useMemo<React.CSSProperties>(() => {
-    const deg = point.x / 10;
+  const deg = useMemo(() => {
+    if (point.x > 0) {
+      return Math.min(point.x / 7, MAX_DEG);
+    }
 
+    return Math.max(point.x / 7, -1 * MAX_DEG);
+  }, [point.x]);
+
+  const style = useMemo<React.CSSProperties>(() => {
     return {
       transform: `translate(${point.x}px, ${point.y}px) rotate(${deg}deg)`
     };
@@ -103,6 +115,7 @@ export const Card = () => {
       onTouchMove={onTouchMove}
       style={style}
     >
+      <CardTextVariant deg={deg}>Да</CardTextVariant>
       <Image src={image1}></Image>
     </CardWrapper>
   );
