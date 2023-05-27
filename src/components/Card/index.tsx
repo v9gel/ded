@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 import { Event, setEvent } from '@/stores/event';
+import { calcMarks } from '@/stores/marks';
 
 import { CardTextVariant } from './CardTextVariant';
 
@@ -62,8 +63,22 @@ export const Card = ({ event }: Props) => {
     if (Math.abs(point.x) > 5) {
       if (deg > 0) {
         setEvent(event.rightLink);
+        calcMarks(
+          event.rightHealth,
+          event.rightLaw,
+          event.rightMoney,
+          event.rightSociety,
+          event.rightTime
+        );
       } else {
         setEvent(event.leftLink);
+        calcMarks(
+          event.leftHealth,
+          event.leftLaw,
+          event.leftMoney,
+          event.leftSociety,
+          event.leftTime
+        );
       }
     }
 

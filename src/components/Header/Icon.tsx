@@ -55,7 +55,7 @@ export const Icon = ({ mark, count }: Props) => {
   return (
     <IconWrapper>
       {icon}
-      <ProgressIcon count={count}>{icon}</ProgressIcon>
+      <ProgressIcon count={Math.min(count, 10)}>{icon}</ProgressIcon>
     </IconWrapper>
   );
 };

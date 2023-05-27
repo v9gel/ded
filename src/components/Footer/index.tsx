@@ -1,4 +1,8 @@
+import { useStore } from '@nanostores/react';
+import { useState } from 'react';
 import styled from 'styled-components';
+
+import { $time } from '@/stores/marks';
 
 import { getRandomName } from '../../tools';
 import { Age } from './Age';
@@ -16,10 +20,14 @@ const FooterWrapper = styled.footer`
 `;
 
 export const Footer = () => {
+  const time = useStore($time);
+
+  const [name, setName] = useState(getRandomName());
+
   return (
     <FooterWrapper>
-      <Name>{getRandomName()}</Name>
-      <Age>{65} лет</Age>
+      <Name>{name}</Name>
+      <Age>{Math.floor(time / 5)} лет</Age>
     </FooterWrapper>
   );
 };

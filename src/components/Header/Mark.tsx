@@ -17,12 +17,13 @@ const MarkWrapper = styled.div`
 interface Props {
   mark: MarkEnum;
   diff?: DiffEnum;
+  count: number;
 }
 
-export const Mark = ({ mark, diff }: Props) => {
+export const Mark = ({ mark, diff, count }: Props) => {
   return (
     <MarkWrapper>
-      <Icon mark={mark} count={5}></Icon>
+      <Icon mark={mark} count={count}></Icon>
       {diff && <Diff diff={diff}></Diff>}
     </MarkWrapper>
   );
