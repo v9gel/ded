@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const EventText = styled.div`
   width: 100%;
 
-  max-height: 150px;
+  max-height: 60px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding: 20px 25px;
+  padding-bottom: 0;
 
   background-color: var(--cYellow);
 
