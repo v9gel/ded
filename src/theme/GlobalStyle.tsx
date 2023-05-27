@@ -3,6 +3,10 @@ import 'normalize.css';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+    html{
+      overflow: hidden;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       
@@ -21,5 +25,14 @@ export const GlobalStyle = createGlobalStyle`
       --cBlack: #242424;
 
       --cCardBg: #FFFAEC;
+
+      --max-mobile-width: 420px;
+    }
+
+    // Мобильная версия
+    @media screen and (max-width: 420px) {
+      html {
+        background-color: var(--cRed);
+      }
     }
 `;
