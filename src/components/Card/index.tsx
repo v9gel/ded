@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
-import image1 from '../../assets/events/1.png';
+import { Event, setEvent } from '@/stores/event';
+
 import { CardTextVariant } from './CardTextVariant';
 
 const MAX_DEG = 10;
@@ -45,7 +46,11 @@ function Point(x: number, y: number): Point {
   };
 }
 
-export const Card = () => {
+interface Props {
+  event: Event;
+}
+
+export const Card = ({ event }: Props) => {
   const [startPoint, setStartPoint] = useState<Point | undefined>(undefined);
   const [point, setPoint] = useState<Point>(Point(0, 0));
 
@@ -54,6 +59,14 @@ export const Card = () => {
   };
 
   const endDrag = () => {
+    if (Math.abs(point.x) > 5) {
+      if (deg > 0) {
+        setEvent(event.rightLink);
+      } else {
+        setEvent(event.leftLink);
+      }
+    }
+
     setPoint(Point(0, 0));
     setStartPoint(undefined);
   };
@@ -115,8 +128,8 @@ export const Card = () => {
       onTouchMove={onTouchMove}
       style={style}
     >
-      <CardTextVariant deg={deg}>Ну вот еще!</CardTextVariant>
-      <Image src={image1}></Image>
+      <CardTextVariant deg={deg}>{deg > 0 ? event.rightText : event.leftText}</CardTextVariant>
+      <Image src={'/events/' + event.img}></Image>
     </CardWrapper>
   );
 };

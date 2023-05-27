@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nanostores/react": "^0.7.1",
     "@rollup/plugin-dsv": "^3.0.2",
+    "nanostores": "^0.9.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
