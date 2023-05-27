@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
-import image1 from '../assets/1.png';
+import image1 from '../assets/events/1.png';
 
 const CardWrapper = styled.div`
   display: flex;
