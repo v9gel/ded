@@ -12,5 +12,4 @@ export const CardContainer = styled.main`
   flex-grow: 1;
 
   width: 100%;
-  height: 126px;
 `;

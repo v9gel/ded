@@ -10,7 +10,7 @@ export const Screen = styled.div`
 
   // Десктоп версия
   @media screen and (min-width: 420px) {
-    border-radius: 60px;
+    border-radius: 30px;
     border: 4px solid var(--cBlack);
 
     height: 700px;
