@@ -14,10 +14,15 @@ export const Background = styled.div`
   justify-content: center;
 
   background-color: var(--cCardBg);
-  background-image: url(${bgImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
 
   position: fixed;
+  transition: all 0.5 ease;
+
+  // Мобильная версия
+  @media screen and (min-width: 960px) {
+    background-image: url(${bgImage});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 `;

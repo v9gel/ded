@@ -1,0 +1,6 @@
+id,text,fromRandom,img,preText,leftText,leftLink,leftMoney,leftHealth,leftSociety,leftLaw,leftTime,rightText,rightLink,rightMoney,rightHealth,rightSociety,rightLaw,rightTime
+1,Сегодня мне 65 лет и я выхожу на пенсию,,1.png,,Ура!,2,,,,,,Буду отрываться всю ночь!,2,,,,,
+2,Чем бы мне сегодня заняться?,,2.png,,Начинаю новую жизнь,3,,,,,,Начинаю новую жизнь,3,,,,,
+3,А вот и первое дело,,3.png,,И что же там?,,,,,,,Посмотримс,,,,,,
+10,Перейти дорогу на красный свет,1,10.png,,,,-1,1,,1,2,Я спешу!,,,-2,,-2,
+11,Поздравить брата с днем рождения,1,11.png,,Обойдется,,,,-2,,,,,-1,,2,,
