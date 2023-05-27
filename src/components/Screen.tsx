@@ -5,7 +5,7 @@ export const Screen = styled.div`
   background-color: var(--cRed);
   flex-direction: column;
 
-  width: 420px;
+  width: 350px;
   height: 100%;
 
   // Десктоп версия
@@ -14,5 +14,9 @@ export const Screen = styled.div`
     border: 4px solid var(--cBlack);
 
     height: 700px;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 420px;
   }
 `;

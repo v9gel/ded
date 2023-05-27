@@ -18,11 +18,10 @@ export const Background = styled.div`
   position: fixed;
   transition: all 0.5 ease;
 
-  // Мобильная версия
   @media screen and (min-width: 960px) {
     background-image: url(${bgImage});
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
   }
 `;
