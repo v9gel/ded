@@ -14,7 +14,7 @@ const CardWrapper = styled.div`
   height: 373px;
 
   background: #fffaec;
-  border: 10px dashed #242424;
+  border: 3px dashed #242424;
   border-radius: 60px;
 
   transition: all 0.2s ease-out 0s;

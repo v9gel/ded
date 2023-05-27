@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import bgImage from '../assets/background.svg';
+
 export const Background = styled.div`
   width: 100vw;
   height: 100vh;
@@ -11,7 +13,11 @@ export const Background = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: #333;
+  background-color: var(--cCardBg);
+  background-image: url(${bgImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 
   position: fixed;
 `;
