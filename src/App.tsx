@@ -4,7 +4,7 @@ import { CardContainer } from './components/CardContainer';
 import { EventText } from './components/EventText';
 import { Header } from './components/Header';
 import { Screen } from './components/Screen';
-import { Footer } from './Footer';
+import { Footer } from './components/Footer';
 
 const App = () => (
   <Background>

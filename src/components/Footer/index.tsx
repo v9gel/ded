@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getRandomName } from '../tools';
+import { getRandomName } from '../../tools';
 import { Age } from './Age';
 import { Name } from './Name';
 
