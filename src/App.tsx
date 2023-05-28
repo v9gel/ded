@@ -11,9 +11,6 @@ import { $event, Event } from './stores/event';
 
 const App = () => {
   const event = useStore($event) as unknown as Event;
-  // const isDied = useDied();
-
-  // console.log('🐴', { isDied }); // TODO remove
 
   return (
     <>

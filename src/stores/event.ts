@@ -106,7 +106,9 @@ export function getEvent(id?: number) {
     return events.find((event) => event.id === id) as Event;
   }
 
-  return getRandomArrayElement(randomEvents) as Event;
+  const rand = randomEvents.filter((ev) => ev.id !== $event.get().id) as Event[];
+
+  return getRandomArrayElement(rand) as Event;
 }
 
 // Хранилище
