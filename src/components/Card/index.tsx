@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 import { useDied } from '@/hooks/useDied';
@@ -47,6 +47,16 @@ function Point(x: number, y: number): Point {
     y
   };
 }
+
+const Holder = styled.div`
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+`;
 
 interface Props {
   event: Event;
@@ -182,19 +192,22 @@ export const Card = ({ event }: Props) => {
   }, [point, startPoint]);
 
   return (
-    <CardWrapper
-      onMouseMove={onMouseMove}
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      onTouchMove={onTouchMove}
-      style={style}
-      visible={visible}
-      isAdd={event.img.includes('_')}
-    >
-      <CardTextVariant deg={deg}>{deg > 0 ? event.rightText : event.leftText}</CardTextVariant>
-      <Image src={'/events/' + event.img}></Image>
-    </CardWrapper>
+    <>
+      <CardWrapper
+        onMouseMove={onMouseMove}
+        onMouseDown={onMouseDown}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onTouchMove={onTouchMove}
+        onMouseUp={onMouseUp}
+        style={style}
+        visible={visible}
+        isAdd={event.img.includes('_')}
+      >
+        <CardTextVariant deg={deg}>{deg > 0 ? event.rightText : event.leftText}</CardTextVariant>
+        <Image src={'/events/' + event.img}></Image>
+      </CardWrapper>
+      <Holder onMouseUp={onMouseUp}></Holder>
+    </>
   );
 };
