@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
+import { useDied } from '@/hooks/useDied';
 import { resetDiffs, setDiffs } from '@/stores/diffs';
 import { Event, setEvent } from '@/stores/event';
-import { calcMarks } from '@/stores/marks';
+import { calcMarks, resetMarks } from '@/stores/marks';
 
 import { CardTextVariant } from './CardTextVariant';
 
@@ -60,6 +61,8 @@ export const Card = ({ event }: Props) => {
     setStartPoint(point);
   };
 
+  const isDied = useDied();
+
   const endDrag = () => {
     if (Math.abs(point.x) > 5) {
       if (deg > 0) {
@@ -69,7 +72,7 @@ export const Card = ({ event }: Props) => {
           setVisible(false);
           setTimeout(() => {
             setVisible(true);
-            setEvent(event.rightLink);
+            setEvent(isDied ? 1 : event.rightLink);
           }, 550);
         }, 400);
         calcMarks(
@@ -86,7 +89,7 @@ export const Card = ({ event }: Props) => {
           setVisible(false);
           setTimeout(() => {
             setVisible(true);
-            setEvent(event.leftLink);
+            setEvent(isDied ? 1 : event.leftLink);
           }, 550);
         }, 400);
         calcMarks(
@@ -96,6 +99,11 @@ export const Card = ({ event }: Props) => {
           event.leftSociety,
           event.leftTime
         );
+      }
+
+      if (isDied) {
+        resetMarks();
+        setEvent(1);
       }
     } else {
       setPoint(Point(0, 0));

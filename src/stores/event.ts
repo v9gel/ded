@@ -5,6 +5,8 @@ import { atom } from 'nanostores';
 import _rawEvents from '@/assets/events1.csv';
 import { getRandomArrayElement } from '@/tools';
 
+import { resetMarks } from './marks';
+
 interface RawEvent {
   id: string;
   text: string;
@@ -112,5 +114,8 @@ export function getEvent(id?: number) {
 export const $event = atom<Event>(getEvent(1));
 
 export function setEvent(id: number | undefined) {
+  if (id === 1) {
+    resetMarks();
+  }
   $event.set(getEvent(id));
 }

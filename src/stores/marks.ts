@@ -19,3 +19,11 @@ export function calcMarks(
   $society.set($society.get() + society);
   $time.set($time.get() + time);
 }
+
+export function resetMarks() {
+  $health.set(5);
+  $low.set(5);
+  $money.set(5);
+  $society.set(5);
+  $time.set(65 * 5);
+}

@@ -7,12 +7,14 @@ import { EventText } from './components/EventText';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Screen } from './components/Screen';
-// import { useDied } from './hooks/useDied';
+import { useDied } from './hooks/useDied';
 import { $event, Event } from './stores/event';
 
 const App = () => {
   const event = useStore($event) as unknown as Event;
-  // const u = useDied();
+  // const isDied = useDied();
+
+  // console.log('🐴', { isDied }); // TODO remove
 
   return (
     <>
