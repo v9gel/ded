@@ -22,4 +22,6 @@ export const EventText = styled.div`
   line-height: 30px;
 
   text-align: center;
+
+  transition: all 0.5s ease-out 0s;
 `;

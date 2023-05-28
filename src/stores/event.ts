@@ -2,7 +2,7 @@ import { atom } from 'nanostores';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import _rawEvents from '@/assets/events.csv';
+import _rawEvents from '@/assets/events1.csv';
 import { getRandomArrayElement } from '@/tools';
 
 interface RawEvent {

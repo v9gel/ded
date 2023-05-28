@@ -9,10 +9,11 @@ import { CardTextVariant } from './CardTextVariant';
 
 const MAX_DEG = 10;
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.div<{ visible: boolean }>`
   position: relative;
 
   display: flex;
+  opacity: ${(props) => (props.visible ? '1' : '0')};
   align-items: center;
   justify-content: center;
 
@@ -25,14 +26,11 @@ const CardWrapper = styled.div`
   border: 3px dashed #242424;
   border-radius: 60px;
 
-  transition: all 0.2s ease-out 0s;
+  transition: transform 0.5s ease-out 0s;
   overflow: hidden;
 `;
 
 const Image = styled.img`
-  height: 100%;
-  width: auto;
-
   pointer-events: none;
 `;
 
@@ -55,6 +53,7 @@ interface Props {
 export const Card = ({ event }: Props) => {
   const [startPoint, setStartPoint] = useState<Point | undefined>(undefined);
   const [point, setPoint] = useState<Point>(Point(0, 0));
+  const [visible, setVisible] = useState(true);
 
   const startDrag = (point: Point) => {
     setStartPoint(point);
@@ -63,7 +62,15 @@ export const Card = ({ event }: Props) => {
   const endDrag = () => {
     if (Math.abs(point.x) > 5) {
       if (deg > 0) {
-        setEvent(event.rightLink);
+        setPoint(Point(100, 500));
+        setTimeout(() => {
+          setPoint(Point(0, 0));
+          setVisible(false);
+          setTimeout(() => {
+            setVisible(true);
+            setEvent(event.rightLink);
+          }, 550);
+        }, 500);
         calcMarks(
           event.rightHealth,
           event.rightLaw,
@@ -72,7 +79,15 @@ export const Card = ({ event }: Props) => {
           event.rightTime
         );
       } else {
-        setEvent(event.leftLink);
+        setPoint(Point(-100, 500));
+        setTimeout(() => {
+          setPoint(Point(0, 0));
+          setVisible(false);
+          setTimeout(() => {
+            setVisible(true);
+            setEvent(event.leftLink);
+          }, 550);
+        }, 500);
         calcMarks(
           event.leftHealth,
           event.leftLaw,
@@ -81,11 +96,12 @@ export const Card = ({ event }: Props) => {
           event.leftTime
         );
       }
+    } else {
+      setPoint(Point(0, 0));
     }
 
     resetDiffs();
 
-    setPoint(Point(0, 0));
     setStartPoint(undefined);
   };
 
@@ -163,6 +179,7 @@ export const Card = ({ event }: Props) => {
       onTouchEnd={onTouchEnd}
       onTouchMove={onTouchMove}
       style={style}
+      visible={visible}
     >
       <CardTextVariant deg={deg}>{deg > 0 ? event.rightText : event.leftText}</CardTextVariant>
       <Image src={'/events/' + event.img}></Image>
