@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 import { useDied } from '@/hooks/useDied';
@@ -21,7 +21,7 @@ const CardWrapper = styled.div<{ visible: boolean; isAdd: boolean }>`
   background-color: var(--cCardBg);
   position: relative;
   width: 286px;
-  height: 373px;
+  height: 310px;
 
   background: ${(props) => (props.isAdd ? '#fee772' : '#FFFAEC')};
   border: 3px dashed #242424;

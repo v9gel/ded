@@ -17,6 +17,8 @@ const Img = styled.img`
   top: 0;
   z-index: 1;
   padding: 20px 0;
+
+  pointer-events: none;
 `;
 
 export const CardHolder = () => {

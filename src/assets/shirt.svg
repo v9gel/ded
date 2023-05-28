@@ -1,5 +1,5 @@
-<svg width="286" height="373" viewBox="0 0 286 373" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="1.5" y="1.5" width="283" height="370" rx="58.5" fill="#C4CB80"/>
+<svg width="286" height="310" viewBox="0 0 286 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.5" y="1.5" width="283" height="307" rx="58.5" fill="#C4CB80"/>
 <circle cx="58.5" cy="56.5" r="22.5" fill="#C9462A"/>
 <circle cx="143.5" cy="56.5" r="22.5" fill="#FEE773"/>
 <circle cx="228.5" cy="56.5" r="22.5" fill="#C9462A"/>
@@ -12,8 +12,5 @@
 <circle cx="58.5" cy="251.5" r="22.5" fill="#FEE773"/>
 <circle cx="143.5" cy="251.5" r="22.5" fill="#C9462A"/>
 <circle cx="228.5" cy="251.5" r="22.5" fill="#FEE773"/>
-<circle cx="58.5" cy="316.5" r="22.5" fill="#C9462A"/>
-<circle cx="143.5" cy="316.5" r="22.5" fill="#FEE773"/>
-<circle cx="228.5" cy="316.5" r="22.5" fill="#C9462A"/>
-<rect x="1.5" y="1.5" width="283" height="370" rx="58.5" stroke="#242424" stroke-width="3" stroke-dasharray="6 6"/>
+<rect x="1.5" y="1.5" width="283" height="307" rx="58.5" stroke="#242424" stroke-width="3" stroke-dasharray="6 6"/>
 </svg>

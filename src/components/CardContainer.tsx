@@ -9,7 +9,14 @@ export const CardContainer = styled.main`
 
   background-color: var(--cYellow);
 
-  flex-grow: 1;
-
   width: 100%;
+
+  // Десктоп версия
+  @media screen and (min-width: 420px) {
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: 420px) {
+    height: calc(100svh - 155px);
+  }
 `;

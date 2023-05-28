@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
 
   width: 100%;
 
-  padding: 20px;
+  padding: 10px 20px;
   justify-content: space-between;
   max-height: 100px;
 `;
