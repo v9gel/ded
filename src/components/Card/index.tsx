@@ -167,7 +167,9 @@ export const Card = ({ event }: Props) => {
 
   const style = useMemo<React.CSSProperties>(() => {
     return {
-      transform: `translate(${point.x}px, ${point.y}px) rotate(${deg}deg)`
+      transform: `translate(${point.x}px, ${point.y}px) rotate(${deg}deg) scale(${
+        startPoint ? '1.05' : '1'
+      })`
     };
   }, [point, startPoint]);
 
