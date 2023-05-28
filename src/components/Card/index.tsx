@@ -9,7 +9,7 @@ import { CardTextVariant } from './CardTextVariant';
 
 const MAX_DEG = 10;
 
-const CardWrapper = styled.div<{ visible: boolean }>`
+const CardWrapper = styled.div<{ visible: boolean; isAdd: boolean }>`
   position: relative;
 
   display: flex;
@@ -22,7 +22,7 @@ const CardWrapper = styled.div<{ visible: boolean }>`
   width: 286px;
   height: 373px;
 
-  background: #fffaec;
+  background: ${(props) => (props.isAdd ? '#fee772' : '#FFFAEC')};
   border: 3px dashed #242424;
   border-radius: 60px;
 
@@ -181,6 +181,7 @@ export const Card = ({ event }: Props) => {
       onTouchMove={onTouchMove}
       style={style}
       visible={visible}
+      isAdd={event.img.includes('_')}
     >
       <CardTextVariant deg={deg}>{deg > 0 ? event.rightText : event.leftText}</CardTextVariant>
       <Image src={'/events/' + event.img}></Image>
