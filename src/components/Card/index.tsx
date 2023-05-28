@@ -28,6 +28,7 @@ const CardWrapper = styled.div<{ visible: boolean }>`
 
   transition: transform 0.5s ease-out 0s;
   overflow: hidden;
+  z-index: 2;
 `;
 
 const Image = styled.img`
@@ -70,7 +71,7 @@ export const Card = ({ event }: Props) => {
             setVisible(true);
             setEvent(event.rightLink);
           }, 550);
-        }, 500);
+        }, 400);
         calcMarks(
           event.rightHealth,
           event.rightLaw,
@@ -87,7 +88,7 @@ export const Card = ({ event }: Props) => {
             setVisible(true);
             setEvent(event.leftLink);
           }, 550);
-        }, 500);
+        }, 400);
         calcMarks(
           event.leftHealth,
           event.leftLaw,
